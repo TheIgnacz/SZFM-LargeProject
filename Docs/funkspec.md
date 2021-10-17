@@ -20,3 +20,8 @@ Követelménylista
 |F3| A háttértudást felmérő kérdésekhez időkorlátot kell beállítani és ezt a tesztet kitöltőjének is megfelelően jelezni kell.|
 |F4| A háttértudást illetve becslésképességet felmérő kérdéseket vizuálisan is meg kell tudni külömböztetni amennyiben ez szükséges.|
 |F5| A azonos kategóriacsoportba tartozó kérdések egymás után kell, hogy megjelenjenek és egy kategórában mindek kérdés megválaszolása után jöhetnek az új kategória kérdései.|
+
+Jelenlegi üzleti folyamatok modellje
+------------------------------------
+
+A mai világban az adatgyűjtés, és tudáshoz hozzájutás egyszerűvé vált, így az egyes tudásfelmérő tesztek könnyen kijátszhatók. Álltalában, pl. sporttal kapcsolatban olyanoktól várunk el jövőbeli sportesemények eredményét hitelesen, akik tájékozottak az adott témában, és sok múlbeli tapasztalatuk van. Mi olyan adatokat szeretnénk gyűjteni, ami megcáfolhaja, esetleg megerősítheti a hasonló véleményeket akár sprtban, akár politikában vagy bármeny más témában.
