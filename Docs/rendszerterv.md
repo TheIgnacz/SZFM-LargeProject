@@ -14,3 +14,31 @@ Követelmények
 - Egy admin felületet kell biztosítani az új kérdések hozzáadásanak lehetősége érdekében.
 - Minden felhasználótol az adatbázisban szereplő összes kérdést meg kell kérdezni, de ezt nem feltétlen azonos sorrendben.
 - A GDPR-nek való megfelelés.
+
+Tesztterv
+---
+A tesztelések célja a rendszer és komponensei funkcionalitásának
+teljes vizsgálata, ellenőrzése, a rendszer által megvalósított üzleti
+szolgáltatások verifikálása.
+
+Tesztelési eljárások:
+
+- **Unit teszt:**
+
+Ahol csak lehetséges, szükséges már a fejlesztési idő alatt is tesztelni, hogy a
+metódusok megfelelően működnek-e.
+Ezért a metódusok megfelelő működésének biztosítására mindegyikhez írni
+kell Unit teszteket, a minél nagyobb kódlefedettséget szem előtt tartva. A
+metódusok akkor vannak kész, ha a tesztesetek hiba nélkül lefutnak az egyes
+metódusokon.
+
+- **Alfa teszt:**
+
+A teszt elsődleges célja: az eddig meglévő funkcióknak a különböző
+böngészőkkel való kompatibilitásának tesztelése. A tesztet a
+fejlesztők végzik.
+Az eljárás sikeres, ha különböző böngészőkben megfelelően működnek a különböző funkciók. A teszt időtartama egy-két hetet vehet igénybe a javításaokkal és azok újratesztelésével együtt.
+
+- **Béta teszt:**
+
+Jelen esetben nem áll módunkban béta tesztet elvégezni.
