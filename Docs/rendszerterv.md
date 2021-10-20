@@ -15,6 +15,12 @@ Követelmények
 - Minden felhasználótol az adatbázisban szereplő összes kérdést meg kell kérdezni, de ezt nem feltétlen azonos sorrendben.
 - A GDPR-nek való megfelelés.
 
+Adatbázis terv
+---
+Az adatokat MySQL-ben fogjuk tárolni az alábbi séma szerint:
+
+![](./Resources/abt.PNG)
+
 Tesztterv
 ---
 A tesztelések célja a rendszer és komponensei funkcionalitásának
