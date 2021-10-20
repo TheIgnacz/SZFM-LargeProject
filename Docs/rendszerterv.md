@@ -19,7 +19,7 @@ Adatbázis terv
 ---
 Az adatokat MySQL-ben fogjuk tárolni az alábbi séma szerint:
 
-![](./Resources/abt.PNG)
+![](./Resources/abt.png)
 
 Tesztterv
 ---
