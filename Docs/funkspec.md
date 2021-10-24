@@ -1,3 +1,4 @@
+
 Funkcionális specifikáció
 =========================
 
@@ -25,3 +26,11 @@ Jelenlegi üzleti folyamatok modellje
 ------------------------------------
 
 A mai világban az adatgyűjtés, és tudáshoz hozzájutás egyszerűvé vált, így az egyes tudásfelmérő tesztek könnyen kijátszhatók. Álltalában, pl. sporttal kapcsolatban olyanoktól várunk el jövőbeli sportesemények eredményét hitelesen, akik tájékozottak az adott témában, és sok múlbeli tapasztalatuk van. Mi olyan adatokat szeretnénk gyűjteni, ami megcáfolhaja, esetleg megerősítheti a hasonló véleményeket akár sprtban, akár politikában vagy bármeny más témában.
+
+Fogalomtár
+---
+
+- HTML: A HTML (angolul: HyperText Markup Language) egy leíró nyelv, melyet weboldalak készítéséhez fejlesztettek ki, és mára már internetes szabvánnyá vált a W3C támogatásával. Az aktuális változata az 5, ezt a verziót használjuk mi is.
+- CSS: A CSS (_Cascading  Style  Sheets_) egy stílusleíró nyelv, mely a HTML vagy XHTML típusú strukturált dokumentumok megjelenését írja le. Weblapunk stílusát ezzel készítjük el.
+- JavaScript: A JavaScript  programozási nyelv egy objektumorientált, prototípus-alapú szkriptnyelv, amelyet weboldalakon elterjedten használnak. A weblapunk programozásához lesz szükségünk rá.
+
