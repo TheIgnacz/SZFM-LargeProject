@@ -5,6 +5,11 @@ A rendszer célja
 
 A rendszer célja egy olyan weboldal létrehozása melyen keresztül a felhasználó kérdőívet tölthet ki melyben kéréseket tud megválaszolni egyszerűen letisztult felület mellett. A kérdésekre számértékekkel lehet majd válaszoni melyet a rendszer adatbázisban ment el, hogy  az adatok feldolgozása  könnyen elvégezhető legyen. Két fajta kérdéstípust külömböztetőnk meg jelen esetben, vannak olyan kérdések melyekre a felhsználó háttér ismerete alapján tudhatja a választ, illetve vannak olyan kérdések melyekre a felhasználó becslést ad. Azért, hogy elkerüljük azokat az eseteket melyekben a felhasználó a kérdésekre a választ az internet segítségével találja meg, az egyes kérdésekhez vagy kérdés csoportokhoz időlimitet állítunk be melynek lejárta előtt a felhasználónak választ kell adni az adott kérdésre/kérdésekre. Az ilyen típusú kérdések melyekre a felhasználó tudhatja a választ, azért van szükség, hogy a feldolgozás során a feldolgozást végző eldönthesse, hogy figyelembe akarja e venni azt az egyes kérdések kiértékelésénél, hogy az adott illető jártas volt e az adott témában vagy sem.
 
+Üzleti folyamatok modellje
+--------------------------
+
+![](./Resources/üfm.PNG)
+
 Követelmények
 ---
 - A kérdések szám adatokkal megválaszolhatóak kell legyenek.
