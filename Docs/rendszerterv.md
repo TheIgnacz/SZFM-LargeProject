@@ -84,3 +84,9 @@ Az eljárás sikeres, ha különböző böngészőkben megfelelően működnek a
 - **Béta teszt:**
 
 Jelen esetben nem áll módunkban béta tesztet elvégezni.
+
+
+Telepítési terv:
+---
+
+A szoftber webes felületen műküdik, elérhetéséhez csak egy böngésző telepítésére van szükség (Google Chrome, Firefox, Opera, Safari), külön alkalmazás nem kell hozzá. A webszerverre közvetlenül az internetről kapcsolódnak rá a kliensre.
