@@ -33,5 +33,6 @@ Fogalomtár
 - CSS: A CSS (_Cascading  Style  Sheets_) egy stílusleíró nyelv, mely a HTML vagy XHTML típusú strukturált dokumentumok megjelenését írja le. Weblapunk stílusát ezzel készítjük el.
 - JavaScript: A JavaScript  programozási nyelv egy objektumorientált, prototípus-alapú szkriptnyelv, amelyet weboldalakon elterjedten használnak. A weblapunk programozásához lesz szükségünk rá.
 - TypeScript: A TypeScript a Microsoft által kifejlesztett és fenntartott programozási nyelv. A JavaScript szigorú szintaktikai felülhalmaza, és
-- PHP: A PHP egy általános szerveroldali szkriptnyelv dinamikus weblapok készítésére. Az első szkriptnyelvek egyike, amely külső fájl használata helyett HTML oldalba ágyazható. opcionális statikus gépelést ad a nyelvhez. A TypeScript nagy alkalmazások fejlesztésére és a JavaScript-re fordításra készült.
+- PHP: A PHP egy általános szerveroldali szkriptnyelv dinamikus weblapok készítésére. Az első szkriptnyelvek egyike, amely külső fájl használata helyett HTML oldalba ágyazható. opcionális statikus gépelést ad a nyelvhez. A TypeScript nagy alkalmazások fejlesztésére és a JavaScript-re
+- Angular: Az Angular egy TypeScript-alapú ingyenes és nyílt forráskódú webalkalmazás-keret, amelyet a Google Angular Team, valamint egyének és vállalatok közössége vezet. Az Angular egy ugyanazon csapat teljes átírása, amely felépítette az AngularJS-t. fordításra készült.
 
