@@ -1,4 +1,3 @@
-
 Funkcionális specifikáció
 =========================
 
@@ -33,4 +32,5 @@ Fogalomtár
 - HTML: A HTML (angolul: HyperText Markup Language) egy leíró nyelv, melyet weboldalak készítéséhez fejlesztettek ki, és mára már internetes szabvánnyá vált a W3C támogatásával. Az aktuális változata az 5, ezt a verziót használjuk mi is.
 - CSS: A CSS (_Cascading  Style  Sheets_) egy stílusleíró nyelv, mely a HTML vagy XHTML típusú strukturált dokumentumok megjelenését írja le. Weblapunk stílusát ezzel készítjük el.
 - JavaScript: A JavaScript  programozási nyelv egy objektumorientált, prototípus-alapú szkriptnyelv, amelyet weboldalakon elterjedten használnak. A weblapunk programozásához lesz szükségünk rá.
+- TypeScript: A TypeScript a Microsoft által kifejlesztett és fenntartott programozási nyelv. A JavaScript szigorú szintaktikai felülhalmaza, és opcionális statikus gépelést ad a nyelvhez. A TypeScript nagy alkalmazások fejlesztésére és a JavaScript-re fordításra készült.
 
