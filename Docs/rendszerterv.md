@@ -40,6 +40,17 @@ Felhasználó:
 * Ki kell tölteni a válaszokat, nem lehet átugorni
 * A végén beküldi a válaszait
 
+Fizikai környezet
+---
+
+* Az alkalmazás webes platformokra készül
+* Nincsenek megvásárolt komponensek
+* Fejlesztői eszközök:
+    * Visual Studio Code
+    * MySQL Workbench
+    * NestJS Framework
+    * Angular Framework
+
 Adatbázis terv
 ---
 Az adatokat MySQL-ben fogjuk tárolni az alábbi séma szerint:
