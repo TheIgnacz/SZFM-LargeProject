@@ -20,6 +20,26 @@ Követelmények
 - Minden felhasználótol az adatbázisban szereplő összes kérdést meg kell kérdezni, de ezt nem feltétlen azonos sorrendben.
 - A GDPR-nek való megfelelés.
 
+Funkcionális terv
+---
+
+##### Rendszerszereplők:
+Adminisztrátor
+Felhasználó
+
+##### Rendszerhasználati esetek és lefutásuk:
+
+Adminisztrátor:
+* Teljes hozzáférése van a rendszerhe
+* Adatbázis tartalmát látthatja, válltoztathatja
+* Felhasználói adatok módosítása
+* Kérdések hozzáadása/törlése/válltoztatása
+
+Felhasználó:
+* Opcionális email cím megadás
+* Ki kell tölteni a válaszokat, nem lehet átugorni
+* A végén beküldi a válaszait
+
 Adatbázis terv
 ---
 Az adatokat MySQL-ben fogjuk tárolni az alábbi séma szerint:
