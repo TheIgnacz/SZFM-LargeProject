@@ -5,6 +5,32 @@ A rendszer célja
 
 A rendszer célja egy olyan weboldal létrehozása melyen keresztül a felhasználó kérdőívet tölthet ki melyben kéréseket tud megválaszolni egyszerűen letisztult felület mellett. A kérdésekre számértékekkel lehet majd válaszoni melyet a rendszer adatbázisban ment el, hogy  az adatok feldolgozása  könnyen elvégezhető legyen. Két fajta kérdéstípust külömböztetőnk meg jelen esetben, vannak olyan kérdések melyekre a felhsználó háttér ismerete alapján tudhatja a választ, illetve vannak olyan kérdések melyekre a felhasználó becslést ad. Azért, hogy elkerüljük azokat az eseteket melyekben a felhasználó a kérdésekre a választ az internet segítségével találja meg, az egyes kérdésekhez vagy kérdés csoportokhoz időlimitet állítunk be melynek lejárta előtt a felhasználónak választ kell adni az adott kérdésre/kérdésekre. Az ilyen típusú kérdések melyekre a felhasználó tudhatja a választ, azért van szükség, hogy a feldolgozás során a feldolgozást végző eldönthesse, hogy figyelembe akarja e venni azt az egyes kérdések kiértékelésénél, hogy az adott illető jártas volt e az adott témában vagy sem.
 
+Projektterv
+-----------
+
+### Projektszerepkörök, felelőségek:
+Scrum master:
+Product owner: Ignácz Máté
+
+### Projektmunkások és felelőségek:
+#### Backend:
+György Dávid, Ignácz Máté, Olasz Zsolt. Feladatuk funkciók létrehozása, adatok tárolása.
+
+#### Frontend:
+György Dávid, Ignácz Máté, Olasz Zsolt. Feladatuk a weboldal elemeinek megejelnítése.
+
+### Ütemterv:
+| Funkció/Story | Feladat/Task | Prioritás | Becslés | Aktuális becslés | Eltelt idő | Hátralévő idő | 
+| -------------- | ----------- | --------- | ------- | ---------------- | ---------- | ------------- |
+| Követelmény specifikáció | | 0 | 8 | 8 | 7 | 1 |
+| Funkcionális specifikáció | | 0 | 8 | 8 | 7 | 1 |
+| Rendszerterv |  | 0 | 8 | 8 | 7 | 1 | 
+| Backend | Funckciók/Adattárolás | 2 | 8 | 8 | 0 | 8 |
+| Frontend |  Megjelenítés | 2 | 8 | 8 | 0 | 8 |
+
+### Mérföldkövek:
+Első heti munka bemutatása elkészült.
+ 
 Üzleti folyamatok modellje
 --------------------------
 
