@@ -11,5 +11,5 @@ import { QuestionsService } from './questions.service';
 
 @Controller('questions')
 export class QuestionsController implements CrudController<Question> {
-    constructor(public service: QuestionsService){}
+    constructor(public service: QuestionsService){} 
 }
