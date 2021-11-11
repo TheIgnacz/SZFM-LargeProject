@@ -1,0 +1,8 @@
+<form #questionForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <label >Új kérdés</label><br>
+    <input type="text" id="questionn" name="question" [(ngModel)]="newQuestion.description"><br>
+    <label for="tudhato">A kérdésre a válasz adott</label>
+    <input type="checkbox" name=known [(ngModel)]="newQuestion.known"><br>
+    <input type="submit" value="Hozzáad"/>
+</form>
+  
