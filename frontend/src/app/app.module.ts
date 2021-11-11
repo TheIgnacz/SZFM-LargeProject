@@ -8,6 +8,8 @@ import { AdminComponent } from './admin/admin.component';
 import { KezdolapComponent } from './kezdolap/kezdolap.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {OrderListModule} from 'primeng/orderlist';
+import {InputNumberModule} from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    OrderListModule,
+    InputNumberModule
   ],
   providers: [],
   bootstrap: [AppComponent]

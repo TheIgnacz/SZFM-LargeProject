@@ -5,4 +5,17 @@
     <input type="checkbox" name=known [(ngModel)]="newQuestion.known"><br>
     <input type="submit" value="Hozzáad"/>
 </form>
+
+<p-orderList [value]="questions">
+    <ng-template let-question pTemplate="item">
+        <div>
+            <div>{{question.id}} - {{question.description}} - {{question.known}}</div>
+        </div>
+    </ng-template>
+</p-orderList>
   
+<form #questionDeleteForm="ngForm" (ngSubmit)="onDelete()" novalidate>
+    <label >Melyik azonosítóju kérdést akarja törölni?</label><br>
+    <p-inputNumber id='id' name="id" [(ngModel)]="id"></p-inputNumber><br>
+    <input type="submit" value="Töröl"/>
+</form>
