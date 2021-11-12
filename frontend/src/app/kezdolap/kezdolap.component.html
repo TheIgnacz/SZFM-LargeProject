@@ -1,1 +1,7 @@
-<p>kezdolap works!</p>
+<form>
+        <ng-template ngFor let-question [ngForOf]="questions">
+                <label>{{question.description}}</label>
+                <input type="number" placeholder="Válasz"/><br>
+        </ng-template>
+    <input type="submit" value="Beküld"/>
+</form>

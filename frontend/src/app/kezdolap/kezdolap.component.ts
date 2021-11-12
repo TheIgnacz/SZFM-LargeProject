@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Question } from './question';
+import { SendingService } from './sending.service';
 
 @Component({
   selector: 'app-kezdolap',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KezdolapComponent implements OnInit {
 
-  constructor() { }
+  questions:any
+
+  constructor(private _sendingService: SendingService) { }
 
   ngOnInit(): void {
+    this.onLoad()
+  }
+
+  onLoad(): void {
+    this._sendingService.getQuestions()
+      .subscribe(data =>  this.questions = data);
   }
 
 }
