@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Question } from './question';
-import { SendingService } from './sending.service';
+import { Answer } from '../classes/answer';
+import { Question } from '../classes/question';
+import { SendingService } from '../services/sending.service';
 
 @Component({
   selector: 'app-kezdolap',
@@ -21,5 +22,15 @@ export class KezdolapComponent implements OnInit {
     this._sendingService.getQuestions()
       .subscribe(data =>  this.questions = data);
   }
+
+  onSubmit(): void{
+    for (let i of this.questions)
+      this._sendingService.sendAnswer(i)
+      .subscribe(
+        data => console.log("Siker ", data),
+        error => console.error(error),
+        () => this.ngOnInit()
+      )
+ }
 
 }
