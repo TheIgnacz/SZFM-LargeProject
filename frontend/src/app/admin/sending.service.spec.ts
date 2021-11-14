@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SendingService } from './sending.service';
+import { SendingService } from '../services/sending.service';
 
 describe('SendingService', () => {
   let service: SendingService;

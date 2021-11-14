@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { Question } from './question';
-import { IQuestion } from './questioni';
+import { Question } from '../classes/question';
+import { IQuestion } from '../classes/questioni';
 import { Observable } from 'rxjs';
+import { Answer } from '../classes/answer';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ import { Observable } from 'rxjs';
 export class SendingService {
 
   _url ='http://localhost:3000/questions'
+  _answer_url = 'http://localhost:3000/answers'
   constructor(private _http: HttpClient) { }
 
   send(question:Question) {
@@ -22,6 +24,10 @@ export class SendingService {
 
   delete(id: number) {
     return this._http.delete<any>(this._url+'/'+id)
+  }
+
+  sendAnswer(answer:Answer) {
+    return this._http.post<any>(this._answer_url, answer)
   }
 
 }

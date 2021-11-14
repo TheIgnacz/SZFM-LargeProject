@@ -1,1 +1,7 @@
-<p>kezdolap works!</p>
+<form #answerForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <ng-template ngFor let-question [ngForOf]="questions">
+                <label>{{question.description}}</label>
+                <input type="number" placeholder="Válasz" [(ngModel)]="question.value" name="answer"/><br>
+        </ng-template>
+    <input type="submit" value="Beküld"/>
+</form>

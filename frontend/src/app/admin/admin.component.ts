@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Question } from './question';
-import { SendingService } from './sending.service';
+import { Question } from '../classes/question';
+import { SendingService } from '../services/sending.service';
 
 @Component({
   selector: 'app-admin',
