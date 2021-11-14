@@ -26,7 +26,9 @@ export class SendingService {
     return this._http.delete<any>(this._url+'/'+id)
   }
 
-  sendAnswer(answer:Answer) {
+  sendAnswer(value:number, qid:number) {
+    let answer = new Answer(1, qid, new Date(), value)
+    console.log(answer)
     return this._http.post<any>(this._answer_url, answer)
   }
 
