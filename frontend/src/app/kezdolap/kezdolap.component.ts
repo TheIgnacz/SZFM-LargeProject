@@ -20,12 +20,16 @@ export class KezdolapComponent implements OnInit {
 
   onLoad(): void {
     this._sendingService.getQuestions()
-      .subscribe(data =>  this.questions = data);
+      .subscribe(data =>  this.questions = data,
+                //() => console.log(this.questions) 
+        );
+      
   }
 
   onSubmit(): void{
     for (let i of this.questions)
-      this._sendingService.sendAnswer(i)
+      console.log(i.value),
+      this._sendingService.sendAnswer(i.value, i.id)
       .subscribe(
         data => console.log("Siker ", data),
         error => console.error(error),
