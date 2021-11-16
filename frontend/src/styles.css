@@ -1,4 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {  background-color:burlywood;
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    font-size : 200%;
+}
+
+.text{
+font-size: 22px;
+}
+
+.main, .admin, .submit, .del, .addButton{
+text-align: center;
+width: 20%;
+position: relative;
+margin: 5px auto;
+margin-right: 2px;
+cursor: pointer;
+background-color: rgb(153, 153, 153);
+padding: 0.5em;
+color: white;
+transition: all 0.2s ease-out;
+box-shadow: 0 2px 10px rgb(153, 153, 153);
+text-transform: uppercase;
+}

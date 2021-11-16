@@ -1,9 +1,9 @@
 <form #questionForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
-    <label >Új kérdés</label><br>
+    <label class="text">Új kérdés</label><br>
     <input type="text" id="questionn" name="question" [(ngModel)]="newQuestion.description"><br>
     <label for="tudhato">A kérdésre a válasz adott</label>
     <input type="checkbox" name=known [(ngModel)]="newQuestion.known"><br>
-    <input type="submit" value="Hozzáad"/>
+    <input type="submit" class="addButton" value="Hozzáad"/>
 </form>
 
 <ng-template ngFor let-question [ngForOf]="questions" pTemplate="item">
@@ -15,5 +15,5 @@
 <form #questionDeleteForm="ngForm" (ngSubmit)="onDelete()" novalidate>
     <label >Melyik azonosítóju kérdést akarja törölni?</label><br>
     <p-inputNumber id='id' name="id" [(ngModel)]="id"></p-inputNumber><br>
-    <input type="submit" value="Töröl"/>
+    <input type="submit" class="del" value="Töröl"/>
 </form>
