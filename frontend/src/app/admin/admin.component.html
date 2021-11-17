@@ -1,19 +1,23 @@
+<div class ="adminDoboz">
 <form #questionForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
-    <label class="text">Új kérdés</label><br>
-    <input type="text" id="questionn" name="question" [(ngModel)]="newQuestion.description"><br>
-    <label for="tudhato">A kérdésre a válasz adott</label>
-    <input type="checkbox" name=known [(ngModel)]="newQuestion.known"><br>
-    <input type="submit" class="addButton" value="Hozzáad"/>
-</form>
 
-<ng-template ngFor let-question [ngForOf]="questions" pTemplate="item">
-    <div>
-        <div>{{question.id}} - {{question.description}} - {{question.known}}</div>
-    </div>
-</ng-template>
+        <label class="kerdes">Új kérdés</label><br>
+        <input class="valasz" type="text" id="questionn" name="question" [(ngModel)]="newQuestion.description"><br>
+        <label for="tudhato">A kérdésre a válasz adott</label>
+        <input type="checkbox" name=known [(ngModel)]="newQuestion.known"><br>
+        <input type="submit" class="addButton" value="Hozzáad"/>
+    </form>
 
-<form #questionDeleteForm="ngForm" (ngSubmit)="onDelete()" novalidate>
-    <label >Melyik azonosítóju kérdést akarja törölni?</label><br>
-    <p-inputNumber id='id' name="id" [(ngModel)]="id"></p-inputNumber><br>
-    <input type="submit" class="del" value="Töröl"/>
-</form>
+    <ng-template ngFor let-question [ngForOf]="questions" pTemplate="item">
+        <div>
+            <div>{{question.id}} - {{question.description}} - {{question.known}}</div>
+        </div>
+    </ng-template>
+
+    <form #questionDeleteForm="ngForm" (ngSubmit)="onDelete()" novalidate>
+        <label class="kerdes">Melyik azonosítóju kérdést akarja törölni?</label><br>
+        <p-inputNumber class="valasz" id='id' name="id" [(ngModel)]="id"></p-inputNumber><br>
+        <input type="submit" class="del" value="Töröl"/>
+    
+    </form>
+</div>
