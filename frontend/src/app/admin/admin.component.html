@@ -17,3 +17,9 @@
     <p-inputNumber id='id' name="id" [(ngModel)]="id"></p-inputNumber><br>
     <input type="submit" value="Töröl"/>
 </form>
+
+<ng-template ngFor let-questionnaire [ngForOf]="questionnaires" pTemplate="item">
+    <div>
+        <div>{{questionnaire.name}}</div>
+    </div>
+</ng-template>

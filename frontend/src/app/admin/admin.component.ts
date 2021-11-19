@@ -13,6 +13,7 @@ export class AdminComponent implements OnInit {
   questions:any
   newQuestion = new Question('Kerdes', false)
   id:number = 0
+  questionnaires:any
   
   constructor(private _sendingService: SendingService) { }
 
@@ -26,6 +27,8 @@ export class AdminComponent implements OnInit {
   onLoad(): void {
     this._sendingService.getQuestions()
       .subscribe(data =>  this.questions = data);
+    this._sendingService.getQuestionnaires()
+      .subscribe(data => this.questionnaires = data);
   }
 
   onSubmit(): void{

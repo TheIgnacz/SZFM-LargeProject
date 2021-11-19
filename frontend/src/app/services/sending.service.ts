@@ -4,6 +4,7 @@ import { Question } from '../classes/question';
 import { IQuestion } from '../classes/questioni';
 import { Observable } from 'rxjs';
 import { Answer } from '../classes/answer';
+import { IQuestionaire } from '../classes/questionnairei';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class SendingService {
 
   _url ='http://localhost:3000/questions'
   _answer_url = 'http://localhost:3000/answers'
+  _questionnaire_url ='http://localhost:3000/questionnaire'
   constructor(private _http: HttpClient) { }
 
   send(question:Question) {
@@ -30,6 +32,10 @@ export class SendingService {
     let answer = new Answer(1, qid, new Date(), value)
     console.log(answer)
     return this._http.post<any>(this._answer_url, answer)
+  }
+
+  getQuestionnaires(){
+    return this._http.get<IQuestionaire[]>(this._questionnaire_url)
   }
 
 }
