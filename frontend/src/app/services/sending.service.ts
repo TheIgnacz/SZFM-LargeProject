@@ -38,4 +38,8 @@ export class SendingService {
     return this._http.get<IQuestionaire[]>(this._questionnaire_url)
   }
 
+  getQuestionnairesId(id: number){
+    return this._http.get<any>(this._questionnaire_url+'/'+id)
+  }
+
 }

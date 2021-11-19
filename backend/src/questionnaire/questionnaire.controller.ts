@@ -6,6 +6,13 @@ import { QuestionnaireService } from './questionnaire.service';
 @Crud({
     model:{
         type:Questionnaire
+    },
+    query:{
+        join:{ 
+            questions:{
+                eager: true
+            }
+        }
     }
 })
 

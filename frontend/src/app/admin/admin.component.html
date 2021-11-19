@@ -1,25 +1,27 @@
-<form #questionForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
-    <label >Új kérdés</label><br>
-    <input type="text" id="questionn" name="question" [(ngModel)]="newQuestion.description"><br>
-    <label for="tudhato">A kérdésre a válasz adott</label>
-    <input type="checkbox" name=known [(ngModel)]="newQuestion.known"><br>
-    <input type="submit" value="Hozzáad"/>
-</form>
+<div class ="adminDoboz">
 
-<ng-template ngFor let-question [ngForOf]="questions" pTemplate="item">
-    <div>
-        <div>{{question.id}} - {{question.description}} - {{question.known}}</div>
-    </div>
-</ng-template>
+    <select [(ngModel)]= questionnaire (ngModelChange)='onQuestionnaireSelected($event)'>
+        <label>Válasszon kérdőívet</label>
+        <option *ngFor="let questionnaire of questionnaires" [value]="questionnaire.id">
+            {{questionnaire.name}}
+        </option>
+    </select>
+    <form #questionForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <label class="kerdes">Új kérdés</label><br>
+        <input class="valasz" type="text" id="questionn" name="question" [(ngModel)]="newQuestion.description"><br>
+        <label for="tudhato">A kérdésre a válasz adott</label>
+        <input type="checkbox" name=known [(ngModel)]="newQuestion.known"><br>
+        <input type="submit" class="addButton" value="Hozzáad"/>
+    </form>
 
-<form #questionDeleteForm="ngForm" (ngSubmit)="onDelete()" novalidate>
+    <ng-template ngFor let-question [ngForOf]="questions" pTemplate="item">
+        <div>
+            <div>{{question.id}} - {{question.description}} - {{question.known}}</div>
+        </div>
+    </ng-template>
+
+    <form #questionDeleteForm="ngForm" (ngSubmit)="onDelete()" novalidate>
     <label >Melyik azonosítóju kérdést akarja törölni?</label><br>
     <p-inputNumber id='id' name="id" [(ngModel)]="id"></p-inputNumber><br>
     <input type="submit" value="Töröl"/>
-</form>
-
-<ng-template ngFor let-questionnaire [ngForOf]="questionnaires" pTemplate="item">
-    <div>
-        <div>{{questionnaire.name}}</div>
-    </div>
-</ng-template>
+    </form>

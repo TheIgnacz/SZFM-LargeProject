@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Question } from '../classes/question';
+import { Questionnaire } from '../classes/questionnaire';
 import { SendingService } from '../services/sending.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class AdminComponent implements OnInit {
   questions:any
   newQuestion = new Question('Kerdes', false)
   id:number = 0
-  questionnaires:any
+  questionnaires:Questionnaire[] | any 
+  questionnaire:any
   
   constructor(private _sendingService: SendingService) { }
 
@@ -25,8 +27,6 @@ export class AdminComponent implements OnInit {
   }
 
   onLoad(): void {
-    this._sendingService.getQuestions()
-      .subscribe(data =>  this.questions = data);
     this._sendingService.getQuestionnaires()
       .subscribe(data => this.questionnaires = data);
   }
@@ -47,6 +47,14 @@ export class AdminComponent implements OnInit {
         error => console.error(error),
         () => this.ngOnInit()
     )
+  }
+  
+
+  onQuestionnaireSelected(val:any){
+    console.log(val)
+    this._sendingService.getQuestionnairesId(val)
+      .subscribe(data => this.questions = data.questions)
+
   }
 
 }

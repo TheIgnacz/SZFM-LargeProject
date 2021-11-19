@@ -6,8 +6,14 @@ import { QuestionsService } from './questions.service';
 @Crud({
     model:{
         type:Question
+    },
+    query:{
+    join:{ 
+        questionaire:{
+            eager: true
+        }
     }
-})
+}})
 
 @Controller('questions')
 export class QuestionsController implements CrudController<Question> {

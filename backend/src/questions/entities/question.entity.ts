@@ -19,6 +19,6 @@ export class Question {
     @Column()
     known: boolean;
 
-    @ManyToOne(type => Questionnaire, questionnaire => questionnaire.id)
+    @ManyToOne(type => Questionnaire, questionnaire => questionnaire.questions)
     questionnaire: Questionnaire
 }
