@@ -1,6 +1,8 @@
 import { Question } from "./question";
 
 export interface IQuestionaire{
+    id:number
     name: string,
-    question:Question[]
+    hide: boolean,
+    questions:Question[]
 }

@@ -11,18 +11,18 @@ import { SendingService } from '../services/sending.service';
 })
 export class AdminComponent implements OnInit {
 
-  questions:any
-  newQuestion = new Question('Kerdes', false)
+  public questions: Question[] = [];
+  public newQuestion:Question = new Question("",false)
   id:number = 0
-  questionnaires:Questionnaire[] | any 
-  questionnaire:any
+  selectedquestionnaire:Questionnaire = new Questionnaire('',false,[],0)
+  questionnaires:Questionnaire[] =[];
+  newQuestionaire = new Questionnaire('Kérdőív', false, [],0)
   
   constructor(private _sendingService: SendingService) { }
 
 
   ngOnInit(): void {
     this.id = 0
-    this.newQuestion = new Question('Kerdes', false)
     this.onLoad()
   }
 
@@ -34,7 +34,12 @@ export class AdminComponent implements OnInit {
   onSubmit(): void{
      this._sendingService.send(this.newQuestion)
       .subscribe(
-        data => console.log("Siker ", data),
+        data => {console.log("Siker ", data),
+                  this.questions.push(data);
+                  this.selectedquestionnaire.questions = this.questions
+                  this._sendingService.updateQuestionaire(this.selectedquestionnaire.id, this.selectedquestionnaire).subscribe(data=>console.log(data),
+                                                                                                                                error => console.error(error), )
+                },
         error => console.error(error),
         () => this.ngOnInit()
       )
@@ -51,10 +56,19 @@ export class AdminComponent implements OnInit {
   
 
   onQuestionnaireSelected(val:any){
-    console.log(val)
     this._sendingService.getQuestionnairesId(val)
-      .subscribe(data => this.questions = data.questions)
+      .subscribe(data => {this.questions = data.questions,
+                          this.selectedquestionnaire = data})
 
   }
+
+  onCreateQuestionaire(): void{
+    this._sendingService.createQuestionnaire(this.newQuestionaire)
+     .subscribe(
+       data => console.log("Siker ", data),
+       error => console.error(error),
+       () => this.ngOnInit()
+     )
+ }
 
 }

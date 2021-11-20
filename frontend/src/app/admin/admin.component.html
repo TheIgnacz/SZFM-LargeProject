@@ -1,11 +1,20 @@
 <div class ="adminDoboz">
 
-    <select [(ngModel)]= questionnaire (ngModelChange)='onQuestionnaireSelected($event)'>
+    <form #questionaireForm="ngForm" (ngSubmit)="onCreateQuestionaire()" novalidate>
+        <label class="kerdes">Új kérdőív</label><br>
+        <input class="valasz" type="text" id="questionaire" name="name" [(ngModel)]="newQuestionaire.name"><br>
+        <label for="tudhato">Rejtse el, hogy tudhatja a felhasználó a kérdésekre a választ:</label>
+        <input type="checkbox" name="hide" [(ngModel)]="newQuestionaire.hide"><br>
+        <input type="submit" class="addButton" value="Hozzáad"/>
+    </form>
+
+    <select [(ngModel)]= selectedquestionnaire.id (ngModelChange)='onQuestionnaireSelected($event)'>
         <label>Válasszon kérdőívet</label>
         <option *ngFor="let questionnaire of questionnaires" [value]="questionnaire.id">
             {{questionnaire.name}}
         </option>
     </select>
+
     <form #questionForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
         <label class="kerdes">Új kérdés</label><br>
         <input class="valasz" type="text" id="questionn" name="question" [(ngModel)]="newQuestion.description"><br>

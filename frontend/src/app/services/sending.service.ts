@@ -5,6 +5,7 @@ import { IQuestion } from '../classes/questioni';
 import { Observable } from 'rxjs';
 import { Answer } from '../classes/answer';
 import { IQuestionaire } from '../classes/questionnairei';
+import { Questionnaire } from '../classes/questionnaire';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +40,16 @@ export class SendingService {
   }
 
   getQuestionnairesId(id: number){
-    return this._http.get<any>(this._questionnaire_url+'/'+id)
+    return this._http.get<IQuestionaire>(this._questionnaire_url+'/'+id)
+  }
+
+  createQuestionnaire(questionare:any){
+    return this._http.post<any>(this._questionnaire_url, questionare)
+  }
+
+  updateQuestionaire(id:number, questionaire:Questionnaire){
+    console.log(questionaire)
+    return this._http.put<any>(this._questionnaire_url+'/'+id, questionaire)
   }
 
 }
