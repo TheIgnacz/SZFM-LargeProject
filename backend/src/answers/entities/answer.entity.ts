@@ -10,7 +10,7 @@ export class Answer {
     @ManyToOne(type => User, user => user.answers)
     user: User; 
 
-    @ManyToOne(type => Question, question => question.answers)
+    @ManyToOne(type => Question, question => question.answers, {onDelete: 'SET NULL'})
     question: Question;
 
     @Column()

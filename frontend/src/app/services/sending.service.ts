@@ -52,4 +52,8 @@ export class SendingService {
     return this._http.put<any>(this._questionnaire_url+'/'+id, questionaire)
   }
 
+  deleteQuestionaire(id: number) {
+    return this._http.delete<any>(this._questionnaire_url+'/'+id)
+  }
+
 }

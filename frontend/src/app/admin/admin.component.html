@@ -10,10 +10,12 @@
 
     <select [(ngModel)]= selectedquestionnaire.id (ngModelChange)='onQuestionnaireSelected($event)'>
         <label>Válasszon kérdőívet</label>
-        <option *ngFor="let questionnaire of questionnaires" [value]="questionnaire.id">
+        <option *ngFor="let questionnaire of questionnaires" [value]="questionnaire.id" [selected]="questionnaire.id==selectedquestionnaire.id">
             {{questionnaire.name}}
         </option>
     </select>
+
+    <button (click)="onDeleteQuestionaire()">Törlés</button>
 
     <form #questionForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
         <label class="kerdes">Új kérdés</label><br>

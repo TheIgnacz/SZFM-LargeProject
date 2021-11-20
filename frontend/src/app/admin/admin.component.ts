@@ -17,19 +17,28 @@ export class AdminComponent implements OnInit {
   selectedquestionnaire:Questionnaire = new Questionnaire('',false,[],0)
   questionnaires:Questionnaire[] =[];
   newQuestionaire = new Questionnaire('Kérdőív', false, [],0)
+  questionaire:any
   
   constructor(private _sendingService: SendingService) { }
 
 
   ngOnInit(): void {
-    this.id = 0
     this.onLoad()
   }
 
   onLoad(): void {
+    this.id = 0
     this._sendingService.getQuestionnaires()
-      .subscribe(data => this.questionnaires = data);
-  }
+      .subscribe(data =>{ this.questionnaires = data;
+      if(this.selectedquestionnaire.id == 0) {
+        this.selectedquestionnaire = this.questionnaires[0]
+        this.questionaire = this.selectedquestionnaire
+      };
+      console.log('Default ', this.selectedquestionnaire.id);
+      this._sendingService.getQuestionnairesId(this.selectedquestionnaire.id)
+      .subscribe(data => this.questions = data.questions)
+
+  })}
 
   onSubmit(): void{
      this._sendingService.send(this.newQuestion)
@@ -41,7 +50,7 @@ export class AdminComponent implements OnInit {
                                                                                                                                 error => console.error(error), )
                 },
         error => console.error(error),
-        () => this.ngOnInit()
+        () => this.onLoad()
       )
   }
 
@@ -50,15 +59,15 @@ export class AdminComponent implements OnInit {
     .subscribe(
       data => console.log("Siker ", data),
         error => console.error(error),
-        () => this.ngOnInit()
+        () => this.onLoad()
     )
   }
   
 
   onQuestionnaireSelected(val:any){
     this._sendingService.getQuestionnairesId(val)
-      .subscribe(data => {this.questions = data.questions,
-                          this.selectedquestionnaire = data})
+      .subscribe(data =>{this.selectedquestionnaire = data;
+                          this.onLoad()})
 
   }
 
@@ -69,6 +78,15 @@ export class AdminComponent implements OnInit {
        error => console.error(error),
        () => this.ngOnInit()
      )
+ }
+
+  onDeleteQuestionaire(){
+    this._sendingService.deleteQuestionaire(this.selectedquestionnaire.id).subscribe(
+      data => {console.log("Siker ", data),
+                this.selectedquestionnaire.id = 0},
+      error => console.error(error),
+      () => this.onLoad()
+    )
  }
 
 }
