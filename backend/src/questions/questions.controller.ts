@@ -11,6 +11,9 @@ import { QuestionsService } from './questions.service';
     join:{ 
         questionaire:{
             eager: true
+        },
+        answers:{
+            eager: true
         }
     }
 }})

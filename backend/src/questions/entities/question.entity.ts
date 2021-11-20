@@ -9,7 +9,7 @@ export class Question {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToMany(type => Answer, answer => answer.id)
+    @OneToMany(type => Answer, answer => answer.question)
     @JoinColumn()
     answers: Answer[];
 
@@ -19,6 +19,6 @@ export class Question {
     @Column()
     known: boolean;
 
-    @ManyToOne(type => Questionnaire, questionnaire => questionnaire.questions)
+    @ManyToOne(type => Questionnaire, questionnaire => questionnaire.questions, {onDelete: 'SET NULL', onUpdate:'CASCADE'})
     questionnaire: Questionnaire
 }

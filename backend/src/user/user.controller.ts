@@ -7,8 +7,14 @@ import { UserService } from './user.service';
 @Crud({
     model:{
         type:User
-    }
-})
+    },
+    query:{
+        join:{ 
+            answers:{
+                eager: true
+            }
+        }
+}})
 @Controller('user')
 export class UserController implements CrudController<User> {
     constructor(public service: UserService){} 

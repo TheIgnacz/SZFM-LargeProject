@@ -10,7 +10,10 @@ export class Questionnaire {
     @Column({unique: true})
     name: String
 
-    @OneToMany(type => Question, question => question.questionnaire)
+    @Column({default: false})
+    hide: boolean
+
+    @OneToMany(type => Question, question => question.questionnaire, {onDelete:'CASCADE', onUpdate:'CASCADE'})
     @JoinColumn()
     questions: Question[];
 }
