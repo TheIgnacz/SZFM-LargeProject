@@ -6,8 +6,17 @@ import { Answer } from './entities/answer.entity';
 @Crud({
     model:{
         type:Answer
-    }
-})
+    },
+    query:{
+        join:{ 
+            question:{
+                eager: true
+            },
+            user:{
+                eager: true
+            }
+        }
+}})
 
 @Controller('answers')
 export class AnswersController implements CrudController<Answer> {

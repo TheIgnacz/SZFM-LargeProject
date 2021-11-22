@@ -1,6 +1,23 @@
 <div class ="adminDoboz">
-<form #questionForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
 
+    <form #questionaireForm="ngForm" (ngSubmit)="onCreateQuestionaire()" novalidate>
+        <label class="kerdes">Új kérdőív</label><br>
+        <input class="valasz" type="text" id="questionaire" name="name" [(ngModel)]="newQuestionaire.name"><br>
+        <label for="tudhato">Rejtse el, hogy tudhatja a felhasználó a kérdésekre a választ:</label>
+        <input type="checkbox" name="hide" [(ngModel)]="newQuestionaire.hide"><br>
+        <input type="submit" class="addButton" value="Hozzáad"/>
+    </form>
+
+    <select [(ngModel)]= selectedquestionnaire.id (ngModelChange)='onQuestionnaireSelected($event)'>
+        <label>Válasszon kérdőívet</label>
+        <option *ngFor="let questionnaire of questionnaires" [value]="questionnaire.id" [selected]="questionnaire.id==selectedquestionnaire.id">
+            {{questionnaire.name}}
+        </option>
+    </select>
+
+    <button (click)="onDeleteQuestionaire()">Törlés</button>
+
+    <form #questionForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
         <label class="kerdes">Új kérdés</label><br>
         <input class="valasz" type="text" id="questionn" name="question" [(ngModel)]="newQuestion.description"><br>
         <label for="tudhato">A kérdésre a válasz adott</label>
@@ -15,9 +32,7 @@
     </ng-template>
 
     <form #questionDeleteForm="ngForm" (ngSubmit)="onDelete()" novalidate>
-        <label class="kerdes">Melyik azonosítóju kérdést akarja törölni?</label><br>
-        <p-inputNumber class="valasz" id='id' name="id" [(ngModel)]="id"></p-inputNumber><br>
-        <input type="submit" class="del" value="Töröl"/>
-    
+    <label >Melyik azonosítóju kérdést akarja törölni?</label><br>
+    <p-inputNumber id='id' name="id" [(ngModel)]="id"></p-inputNumber><br>
+    <input type="submit" value="Töröl"/>
     </form>
-</div>

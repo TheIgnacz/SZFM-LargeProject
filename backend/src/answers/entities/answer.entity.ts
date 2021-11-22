@@ -7,10 +7,10 @@ export class Answer {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @ManyToOne(type => User, user => user.id)
+    @ManyToOne(type => User, user => user.answers)
     user: User; 
 
-    @ManyToOne(type => Question, question => question.id)
+    @ManyToOne(type => Question, question => question.answers, {onDelete: 'SET NULL'})
     question: Question;
 
     @Column()

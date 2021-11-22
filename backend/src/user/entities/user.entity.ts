@@ -10,7 +10,7 @@ export class User {
     @Column()
     name: string;
 
-    @OneToMany(type => Answer, answer => answer.id)
+    @OneToMany(type => Answer, answer => answer.user)
     @JoinColumn()
     answers: Answer[];
 

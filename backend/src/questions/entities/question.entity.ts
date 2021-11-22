@@ -1,6 +1,7 @@
 import { type } from "os";
 import { Answer } from "src/answers/entities/answer.entity";
-import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Questionnaire } from "src/questionnaire/entities/questionnaire.entity";
+import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Question {
@@ -8,7 +9,7 @@ export class Question {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @OneToMany(type => Answer, answer => answer.id)
+    @OneToMany(type => Answer, answer => answer.question, {onDelete:'SET NULL'})
     @JoinColumn()
     answers: Answer[];
 
@@ -17,4 +18,7 @@ export class Question {
 
     @Column()
     known: boolean;
+
+    @ManyToOne(type => Questionnaire, questionnaire => questionnaire.questions, {onDelete: 'CASCADE', onUpdate:'CASCADE'})
+    questionnaire: Questionnaire
 }
