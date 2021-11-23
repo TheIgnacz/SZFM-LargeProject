@@ -10,7 +10,7 @@
 
     <select [(ngModel)]= selectedquestionnaire.id (ngModelChange)='onQuestionnaireSelected($event)'>
         <label>Válasszon kérdőívet</label>
-        <option *ngFor="let questionnaire of questionnaires" [value]="questionnaire.id" [selected]="questionnaire.id==selectedquestionnaire.id">
+        <option *ngFor="let questionnaire of questionnaires" [ngValue]="questionnaire.id" [selected]="questionnaire.id==selectedquestionnaire.id">
             {{questionnaire.name}}
         </option>
     </select>
