@@ -18,6 +18,6 @@ export class Question {
     @Column()
     known: boolean;
 
-    @ManyToOne(type => Questionnaire, questionnaire => questionnaire.questions, {cascade: true})
+    @ManyToOne(type => Questionnaire, questionnaire => questionnaire.questions, {onDelete: "CASCADE", onUpdate: "CASCADE"})
     questionnaire: Questionnaire
 }
