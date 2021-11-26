@@ -1,5 +1,4 @@
-import { type } from "os";
-import { Answer } from "src/answers/entities/answer.entity";
+import { Answer } from "../../answers/entities/answer.entity";
 import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()

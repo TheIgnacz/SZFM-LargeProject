@@ -45,7 +45,8 @@ export class AdminComponent implements OnInit {
       .subscribe(
         data => {console.log("Siker ", data),
                   this.questions.push(data);
-                  this.selectedquestionnaire.questions = this.questions
+                  this.selectedquestionnaire.questions = this.questions;
+                  console.log(this.selectedquestionnaire.name)
                   this._sendingService.updateQuestionaire(this.selectedquestionnaire.id, this.selectedquestionnaire).subscribe(data=>console.log(data),
                                                                                                                                 error => console.error(error), )
                 },
