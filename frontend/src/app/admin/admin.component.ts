@@ -15,10 +15,10 @@ export class AdminComponent implements OnInit {
 
   public questions: Question[] = [];
   public newQuestion:Question = new Question("",false)
-  id:number = 0
+  id: number=0;
   selectedquestionnaire:Questionnaire = new Questionnaire('',false,[],0)
   questionnaires:Questionnaire[] =[];
-  newQuestionaire = new Questionnaire('Kérdőív', false, [],0)
+  newQuestionaire = new Questionnaire('', false, [],0)
   questionaire:any
   
   constructor(private _sendingService: SendingService, private titleService: Title, private router: Router) { }
@@ -31,7 +31,8 @@ export class AdminComponent implements OnInit {
   }
 
   onLoad(): void {
-    this.id = 0
+    this.newQuestion = new Question("",false)
+    this.id=0;
     this._sendingService.getQuestionnaires()
       .subscribe(data =>{ this.questionnaires = data;
       if(this.selectedquestionnaire.id == 0) {

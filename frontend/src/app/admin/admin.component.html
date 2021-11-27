@@ -20,7 +20,7 @@
 
     <form #questionForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
         <label class="kerdes">Új kérdés</label><br>
-        <input class="valasz" type="text" id="questionn" name="question" [(ngModel)]="newQuestion.description"><br>
+        <input class="valasz" type="text" id="questionn" name="question" placeholder="Kérdés szövege" [(ngModel)]="newQuestion.description"><br>
         <label for="tudhato">A kérdésre a válasz adott</label>
         <input type="checkbox" name=known [(ngModel)]="newQuestion.known"><br>
         <input type="submit" class="addButton" value="Hozzáad"/>
@@ -34,6 +34,6 @@
 
     <form #questionDeleteForm="ngForm" (ngSubmit)="onDelete()" novalidate>
     <label >Melyik azonosítóju kérdést akarja törölni?</label><br>
-    <p-inputNumber id='id' name="id" [(ngModel)]="id"></p-inputNumber><br>
+    <p-inputNumber id='id' name="id" placeholder="id" [(ngModel)]="id"></p-inputNumber><br>
     <input type="submit" value="Töröl"/>
     </form>
