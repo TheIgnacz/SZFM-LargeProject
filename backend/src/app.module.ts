@@ -11,6 +11,8 @@ import { User } from './user/entities/user.entity';
 import { QuestionnaireController } from './questionnaire/questionnaire.controller';
 import { QuestionnaireModule } from './questionnaire/questionnaire.module';
 import { Questionnaire } from './questionnaire/entities/questionnaire.entity';
+import { LoginController } from './login/login.controller';
+import { LoginService } from './login/login.service';
 
 @Module({
   imports: [
@@ -29,7 +31,7 @@ import { Questionnaire } from './questionnaire/entities/questionnaire.entity';
     QuestionsModule,
     QuestionnaireModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, LoginController],
+  providers: [AppService, LoginService],
 })
 export class AppModule {}
