@@ -10,12 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {OrderListModule} from 'primeng/orderlist';
 import {InputNumberModule} from 'primeng/inputnumber';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
-    KezdolapComponent
+    KezdolapComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import {InputNumberModule} from 'primeng/inputnumber';
     OrderListModule,
     InputNumberModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

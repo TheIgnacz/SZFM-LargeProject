@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { Answer } from '../classes/answer';
 import { IQuestionaire } from '../classes/questionnairei';
 import { Questionnaire } from '../classes/questionnaire';
+import { coerceStringArray } from '@angular/cdk/coercion';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class SendingService {
   _url ='http://localhost:3000/questions'
   _answer_url = 'http://localhost:3000/answers'
   _questionnaire_url ='http://localhost:3000/questionnaire'
+  _login_url = 'http://localhost:3000/login'
   constructor(private _http: HttpClient) { }
 
   send(question:Question) {
@@ -54,6 +56,14 @@ export class SendingService {
 
   deleteQuestionaire(id: number) {
     return this._http.delete<any>(this._questionnaire_url+'/'+id)
+  }
+
+  async loggedin():Promise<Observable<boolean>>{
+    return await this._http.get<boolean>(this._login_url+'/logged')
+  }
+
+  setpassword(password:String){
+    return this._http.get<any>(this._login_url+'/'+password)
   }
 
 }

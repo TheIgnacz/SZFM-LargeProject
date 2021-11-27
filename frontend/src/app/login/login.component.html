@@ -1,0 +1,10 @@
+<button (click)="backToHome()">Vissza</button>
+<h1>Adja meg az admion jelszót</h1>
+<div>
+<form #loginForm="ngForm" (ngSubmit)="login()">
+    {{error}}<br>
+    <label for="password">Jelszó:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="inputpassword"><br><br>
+    <input type="submit" value="Belépés">
+</form>
+</div>  

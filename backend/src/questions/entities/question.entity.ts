@@ -1,6 +1,5 @@
-import { type } from "os";
-import { Answer } from "src/answers/entities/answer.entity";
-import { Questionnaire } from "src/questionnaire/entities/questionnaire.entity";
+import { Answer } from "../../answers/entities/answer.entity";
+import { Questionnaire } from "../../questionnaire/entities/questionnaire.entity";
 import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
@@ -19,6 +18,6 @@ export class Question {
     @Column()
     known: boolean;
 
-    @ManyToOne(type => Questionnaire, questionnaire => questionnaire.questions, {onDelete: 'CASCADE', onUpdate:'CASCADE'})
+    @ManyToOne(type => Questionnaire, questionnaire => questionnaire.questions, {onDelete: "CASCADE", onUpdate: "CASCADE"})
     questionnaire: Questionnaire
 }
