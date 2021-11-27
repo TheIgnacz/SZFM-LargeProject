@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { Question } from '../classes/question';
 import { Questionnaire } from '../classes/questionnaire';
 import { SendingService } from '../services/sending.service';
@@ -20,7 +21,7 @@ export class AdminComponent implements OnInit {
   newQuestionaire = new Questionnaire('Kérdőív', false, [],0)
   questionaire:any
   
-  constructor(private _sendingService: SendingService, private titleService: Title) { }
+  constructor(private _sendingService: SendingService, private titleService: Title, private router: Router) { }
 
   
 
@@ -95,5 +96,9 @@ export class AdminComponent implements OnInit {
       () => this.onLoad()
     )
  }
+
+backToHome(){
+  this.router.navigate(['/kezdolap'])
+}
 
 }

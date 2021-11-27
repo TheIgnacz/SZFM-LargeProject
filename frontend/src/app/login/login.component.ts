@@ -23,4 +23,8 @@ export class LoginComponent implements OnInit {
      this.sendinService.setpassword(this.inputpassword).subscribe(data =>{this.router.navigate(['/admin'])},
                                                                       error=>console.log(error)
         )}
+
+  backToHome(){
+    this.router.navigate(['/kezdolap'])
+  }
 }

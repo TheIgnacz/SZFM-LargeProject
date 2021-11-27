@@ -1,8 +1,9 @@
 <div class ="adminDoboz">
+    <button (click)="backToHome()">Vissza</button>
 
     <form #questionaireForm="ngForm" (ngSubmit)="onCreateQuestionaire()" novalidate>
         <label class="kerdes">Új kérdőív</label><br>
-        <input class="valasz" type="text" id="questionaire" name="name" [(ngModel)]="newQuestionaire.name"><br>
+        <input class="valasz" type="text" id="questionaire" name="name" placeholder="Kérdőív" [(ngModel)]="newQuestionaire.name"><br>
         <label for="tudhato">Rejtse el, hogy tudhatja a felhasználó a kérdésekre a választ:</label>
         <input type="checkbox" name="hide" [(ngModel)]="newQuestionaire.hide"><br>
         <input type="submit" class="addButton" value="Hozzáad"/>

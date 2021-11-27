@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { Answer } from '../classes/answer';
 import { Question } from '../classes/question';
 import { SendingService } from '../services/sending.service';
@@ -12,9 +14,10 @@ export class KezdolapComponent implements OnInit {
 
   questions:any
 
-  constructor(private _sendingService: SendingService) { }
+  constructor(private _sendingService: SendingService, private titleService: Title, private router: Router) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle("Kezdőlap")
     this.onLoad()
   }
 
@@ -35,6 +38,10 @@ export class KezdolapComponent implements OnInit {
         error => console.error(error),
         () => this.ngOnInit()
       )
+ }
+
+ goToAdminPage(){
+  this.router.navigate(['/login'])
  }
 
 }
