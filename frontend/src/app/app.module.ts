@@ -12,13 +12,15 @@ import {OrderListModule} from 'primeng/orderlist';
 import {InputNumberModule} from 'primeng/inputnumber';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
+import { QuestionaireComponent } from './questionaire/questionaire.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminComponent,
     KezdolapComponent,
-    LoginComponent
+    LoginComponent,
+    QuestionaireComponent
   ],
   imports: [
     BrowserModule,
