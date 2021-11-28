@@ -1,4 +1,4 @@
-Keződlap
+Kezdőlap
 ---
 
 Elvárt viselkedés: A kezdőlap szövegre kattintva az oldal betölti a kezdőlap tartalmát, és megváltozatja az oldal címét kezdőlapra.
