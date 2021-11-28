@@ -1,3 +1,6 @@
+Kezdőlap
+---
+
 Elvárt viselkedés: A kezdőlap szövegre kattintva az oldal betölti a kezdőlap tartalmát, és megváltozatja az oldal címét kezdőlapra.
 
 Valós viselkedés:
@@ -6,20 +9,22 @@ Valós viselkedés:
 - Google Chrome böngésző: A kezdőlap tartalma megfelelően jelenik meg, az oldal címe megváltozik.
 
 
-Elvárt viselkedés: Az admin szövegre kattintva az oldal betölti az admin felület tartalmát, és megváltozatja az oldal címét adminra.
-
-Valós viselkedés:
-- Opera böngésző: Az admin felület tartalma megfelelően jelenik meg, az oldal címe megváltozik.
-- Microsoft Edge böngésző: Az admin felület tartalma megfelelően jelenik meg, az oldal címe megváltozik.
-- Google Chrome böngésző: Az admin felület tartalma megfelelően jelenik meg, az oldal címe megváltozik.
-
-
 Elvárt viselkedés: A kezdőlapon az adott kérdőív kérdéseit kitöltve majd a beküld gombra kattintva a kérdőívre adott válaszokat eltároljuk egy adatbázisban
 
 Valós viselkedés:
 - Opera böngésző: A kérdőív kitöltését követően a beküld gombot lenyomva a kérdőívre adott válaszokat elmeni a weblap.
 - Microsoft Edge böngésző: A kérdőív kitöltését követően a beküld gombot lenyomva a kérdőívre adott válaszokat elmeni a weblap.
 - Google Chrome böngésző: A kérdőív kitöltését követően a beküld gombot lenyomva a kérdőívre adott válaszokat elmeni a weblap.
+
+
+Admin felület
+---
+Elvárt viselkedés: Az admin szövegre kattintva az oldal betölti az admin felület tartalmát, és megváltozatja az oldal címét adminra.
+
+Valós viselkedés:
+- Opera böngésző: Az admin felület tartalma megfelelően jelenik meg, az oldal címe megváltozik.
+- Microsoft Edge böngésző: Az admin felület tartalma megfelelően jelenik meg, az oldal címe megváltozik.
+- Google Chrome böngésző: Az admin felület tartalma megfelelően jelenik meg, az oldal címe megváltozik.
 
 
 Elvárt viselkedés: Az admin felületen új kérdőív megadását és a hozzád gomb lenyomását követően jelenjen meg a legördülő listában az új kérdőív és annak kérdései.
