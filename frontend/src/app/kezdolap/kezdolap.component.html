@@ -1,11 +1,8 @@
 <button (click)="goToAdminPage()">Admin felület</button>
 <button (click)="goToQuestionaire()">Kérdőív felület</button>
 
-<form #userDate="ngForm" (ngSubmit)="onSubmit()" novalidate>
-        <label class="kerdes">Adja meg a nevét (Opcionálist)</label><br>
-        <input class="name" type="text" id="name" name="name"><br>
-        <input type="submit" class="addButton" value="Kezdés"/>
-</form>
+<br>
+<br>
 
 <select [(ngModel)]= selectedquestionnaire.id (ngModelChange)='onQuestionnaireSelected($event)'>
         <label>Válasszon kérdőívet</label>
@@ -13,3 +10,9 @@
             {{questionnaire.name}}
         </option>
 </select>
+
+<form #userDate="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <label class="kerdes">Adja meg a nevét (Opcionálist)</label><br>
+        <input class="name" type="text" id="name" name="name" [(ngModel)]="newUser.name"><br>
+        <input type="submit" class="addButton" value="Kezdés"/>
+</form>

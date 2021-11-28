@@ -5,6 +5,7 @@ import { Answer } from '../classes/answer';
 import { Question } from '../classes/question';
 import { SendingService } from '../services/sending.service';
 import { Questionnaire } from '../classes/questionnaire';
+import { User } from '../classes/user';
 
 
 
@@ -22,8 +23,7 @@ export class KezdolapComponent implements OnInit {
   questionnaires:Questionnaire[] =[];
   newQuestionaire = new Questionnaire('', false, [],0)
   questionaire:any
-
-
+  newUser = new User('')
 
   constructor(private _sendingService: SendingService, private router: Router) { }
 
@@ -32,7 +32,15 @@ export class KezdolapComponent implements OnInit {
   }
 
   onSubmit(): void {
+      this.creatUser()
+  }
 
+  creatUser(): void {
+    this._sendingService.createUser(this.newUser)
+    .subscribe(
+      data => console.log("Siker ", data),
+      error => console.error(error),
+    )
   }
 
   onLoad(): void {
