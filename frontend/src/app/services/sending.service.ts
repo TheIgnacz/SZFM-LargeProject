@@ -7,6 +7,7 @@ import { Answer } from '../classes/answer';
 import { IQuestionaire } from '../classes/questionnairei';
 import { Questionnaire } from '../classes/questionnaire';
 import { coerceStringArray } from '@angular/cdk/coercion';
+import { User } from '../classes/user';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,8 @@ export class SendingService {
   _answer_url = 'http://localhost:3000/answers'
   _questionnaire_url ='http://localhost:3000/questionnaire'
   _login_url = 'http://localhost:3000/login'
+  _user_url = 'http://localhost:3000/user'
+
   constructor(private _http: HttpClient) { }
 
   send(question:Question) {
@@ -46,6 +49,7 @@ export class SendingService {
   }
 
   createQuestionnaire(questionare:any){
+    console.log(questionare)
     return this._http.post<any>(this._questionnaire_url, questionare)
   }
 
@@ -66,4 +70,8 @@ export class SendingService {
     return this._http.get<any>(this._login_url+'/'+password)
   }
 
+  createUser(name:any) {
+    console.log(name)
+    return this._http.post<any>(this._user_url, name)
+  }
 }

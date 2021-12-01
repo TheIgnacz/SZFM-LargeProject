@@ -1,15 +1,18 @@
 <button (click)="goToAdminPage()">Admin felület</button>
-<form #answerForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
-        <div class="kerdesek">
-                <ng-template ngFor let-question [ngForOf]="questions">
-                        <div class="kerdes">
-                                <label>{{question.description}}</label>
-                        </div>
-                        <input class="valasz" type="number" placeholder="Válasz" [(ngModel)]="question.value" name="answer"/><br>
-                </ng-template>
-                
-        <div class ="bekuldGomb">
-                <input type="submit" class="submit" value="Beküld"/>
-        </div>
-        </div>
+<!--<button (click)="goToQuestionaire()">Kérdőív felület</button>-->
+
+<br>
+<br>
+
+<select [(ngModel)]= selectedquestionnaire.id (ngModelChange)='onQuestionnaireSelected($event)'>
+        <option value="" disabled selected>Válasszon kérdőívet</option>
+        <option *ngFor="let questionnaire of questionnaires" [ngValue]="questionnaire.id" [selected]="questionnaire.id==selectedquestionnaire.id">
+            {{questionnaire.name}}
+        </option>
+</select>
+
+<form #userDate="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        <label class="kerdes">Adja meg a nevét (Opcionálist)</label><br>
+        <input class="name" type="text" id="name" name="name" [(ngModel)]="newUser.name"><br>
+        <input type="submit" class="addButton" value="Kezdés"/>
 </form>
