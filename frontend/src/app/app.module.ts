@@ -13,6 +13,7 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth/auth.guard';
 import { QuestionaireComponent } from './questionaire/questionaire.component';
+import { MyFilterPipe } from './questionaire/my-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { QuestionaireComponent } from './questionaire/questionaire.component';
     AdminComponent,
     KezdolapComponent,
     LoginComponent,
-    QuestionaireComponent
+    QuestionaireComponent,
+    MyFilterPipe
   ],
   imports: [
     BrowserModule,

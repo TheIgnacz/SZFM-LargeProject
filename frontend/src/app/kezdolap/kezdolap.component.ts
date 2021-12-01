@@ -69,7 +69,7 @@ export class KezdolapComponent implements OnInit {
  }
 
  goToQuestionaire() {
-   this.router.navigate(['/questionaire'])
+   this.router.navigate(['/questionaire', this.selectedquestionnaire.id, 1])
  }
 
 }

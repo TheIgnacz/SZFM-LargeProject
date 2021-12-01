@@ -5,7 +5,7 @@
 <br>
 
 <select [(ngModel)]= selectedquestionnaire.id (ngModelChange)='onQuestionnaireSelected($event)'>
-        <label>Válasszon kérdőívet</label>
+        <option value="" disabled selected>Válasszon kérdőívet</option>
         <option *ngFor="let questionnaire of questionnaires" [ngValue]="questionnaire.id" [selected]="questionnaire.id==selectedquestionnaire.id">
             {{questionnaire.name}}
         </option>

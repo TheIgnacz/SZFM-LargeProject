@@ -1,6 +1,5 @@
 export interface IQuestion{
-    id?:number
     description: string,
-    known: boolean
-    
+    known: boolean,
+    id?:number
 }

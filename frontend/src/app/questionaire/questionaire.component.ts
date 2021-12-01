@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Answer } from '../classes/answer';
 import { Question } from '../classes/question';
+import { IQuestion } from '../classes/questioni';
 import { SendingService } from '../services/sending.service';
 
 @Component({
@@ -13,11 +14,19 @@ import { SendingService } from '../services/sending.service';
 export class QuestionaireComponent implements OnInit {
 
   questions:any
+  id:any
 
-  constructor(private _sendingService: SendingService, private titleService: Title, private router: Router) { }
+  constructor(private _sendingService: SendingService, private titleService: Title, private router: Router, private route:ActivatedRoute) {}
+  
+  filterQuestion(questions: IQuestion) {
+    return questions.id != this.id;
+  }
 
   ngOnInit(): void {
     this.titleService.setTitle("Kezdőlap")
+    this.route.paramMap.subscribe(paramMap => {
+      this.id = paramMap.get('id');
+    })
     this.onLoad()
   }
 
@@ -39,5 +48,4 @@ export class QuestionaireComponent implements OnInit {
         () => this.ngOnInit()
       )
  }
-
 }

@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'kezdolap', component: KezdolapComponent},
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
-  {path: 'questionaire', component: QuestionaireComponent}
+  {path: 'questionaire/:id/:user', component: QuestionaireComponent}
 ];
 
 @NgModule({

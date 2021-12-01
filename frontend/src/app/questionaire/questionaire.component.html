@@ -1,11 +1,9 @@
 <form #answerForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
     <div class="kerdesek">
-            <ng-template ngFor let-question [ngForOf]="questions">
-                    <div class="kerdes">
-                            <label>{{question.description}}</label>
-                    </div>
-                    <input class="valasz" type="number" placeholder="Válasz" [(ngModel)]="question.value" name="answer"/><br>
-            </ng-template>
+        <li *ngFor="let question of questions | myfilter: filterQuestion">
+                <label>{{question.description}}</label>
+                <input class="valasz" type="number" placeholder="Válasz" [(ngModel)]="question.value" name="answer"/>
+        </li>
             
     <div class ="bekuldGomb">
             <input type="submit" class="submit" value="Beküld"/>
