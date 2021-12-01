@@ -13,35 +13,40 @@ import { SendingService } from '../services/sending.service';
 })
 export class QuestionaireComponent implements OnInit {
 
-  questions:any
-  id:any
+  questions:Question[]
+  id?:number
+  private sub:any;
 
-  constructor(private _sendingService: SendingService, private titleService: Title, private router: Router, private route:ActivatedRoute) {}
+  constructor(private _sendingService: SendingService, private titleService: Title, private router: Router, private route:ActivatedRoute) {
+    this.questions = []
+  }
   
-  filterQuestion(questions: IQuestion) {
-    return questions.id != this.id;
+  
+  filterQuestion() {
+    return this.questions.filter(question => question.questionnaireId == this.id)
   }
 
   ngOnInit(): void {
     this.titleService.setTitle("Kezdőlap")
-    this.route.paramMap.subscribe(paramMap => {
-      this.id = paramMap.get('id');
+    this.sub = this.route.paramMap.subscribe(paramMap => {
+      this.id = Number(paramMap.get('id'));
     })
+    //console.log("id " + this.id)
     this.onLoad()
   }
 
   onLoad(): void {
     this._sendingService.getQuestions()
-      .subscribe(data =>  this.questions = data,
+      .subscribe(data =>  this.questions = data.map(question => new Question(question.description, question.known, question.id, question.questionnaireId)),
                 //() => console.log(this.questions) 
         );
       
   }
 
   onSubmit(): void{
-    for (let i of this.questions)
+    for (let i of this.filterQuestion())
       console.log(i.value),
-      this._sendingService.sendAnswer(i.value, i.id)
+      this._sendingService.sendAnswer(i.value, i.id!)
       .subscribe(
         data => console.log("Siker ", data),
         error => console.error(error),

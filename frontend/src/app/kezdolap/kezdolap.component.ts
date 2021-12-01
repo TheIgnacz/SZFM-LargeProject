@@ -25,7 +25,7 @@ export class KezdolapComponent implements OnInit {
   questionaire:any
   newUser = new User('')
 
-  constructor(private _sendingService: SendingService, private router: Router) { }
+  constructor(private _sendingService: SendingService, private router: Router) {}
 
   ngOnInit(): void {
     this.onLoad()
@@ -38,8 +38,10 @@ export class KezdolapComponent implements OnInit {
   creatUser(): void {
     this._sendingService.createUser(this.newUser)
     .subscribe(
-      data => console.log("Siker ", data),
-      error => console.error(error),
+      data => {
+        console.log("Siker ", data)
+        this.goToQuestionaire(this.selectedquestionnaire.id, data.id) },
+      error => console.error(error)
     )
   }
 
@@ -68,8 +70,8 @@ export class KezdolapComponent implements OnInit {
   this.router.navigate(['/login'])
  }
 
- goToQuestionaire() {
-   this.router.navigate(['/questionaire', this.selectedquestionnaire.id, 1])
+ goToQuestionaire(questionnaireId:number, userId: number) {
+   this.router.navigate(['/questionaire', questionnaireId, userId])
  }
 
 }
