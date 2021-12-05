@@ -25,10 +25,11 @@ export class KezdolapComponent implements OnInit {
   questionaire:any
   newUser = new User('')
 
-  constructor(private _sendingService: SendingService, private router: Router) {}
+  constructor(private titleService: Title, private _sendingService: SendingService, private router: Router) {}
 
   ngOnInit(): void {
-    this.onLoad()
+    this.onLoad();
+    this.titleService.setTitle("Kezdőlap");
   }
 
   onSubmit(): void {

@@ -6,9 +6,16 @@ body {  background-color:burlywood;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.main, .admin, .del, .addButton{
+.kezdolap, .adminDoboz{
+    margin: auto;
+    margin-top: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+.main, .admin, .del, .addButton, .login, .vissza, .submit{
 text-align: center;
-width: 30%;
+width: 40%;
 position: relative;
 margin: 5px auto;
 margin-right: 3px;
@@ -19,6 +26,7 @@ padding: 0.5em;
 color: white;
 box-shadow: 0 2px 10px rgb(153, 153, 153);
 text-transform: uppercase;
+transition: all 0.2s ease-out;
 }
 
 .gombok{
@@ -30,40 +38,16 @@ text-transform: uppercase;
 }
 
 .kerdesek{
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-
-.adminDoboz{
-    position: absolute;
-    text-align: center;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-}
-
-.submit{
-    text-align: center;
+    margin: auto;
+    margin-top: 10px;
     width: 60%;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    margin: 5px auto;
-    margin-right: 2px;
-    cursor: pointer;
-    background-color: rgb(153, 153, 153);
-    padding: 0.5em;
-    color: white;
-    transition: all 0.2s ease-out;
-    box-shadow: 0 2px 10px rgb(153, 153, 153);
-    text-transform: uppercase;
+    text-align: center;
 }
+
 
 .kerdes{
-    font-size: 20px;
-    position:static;
+    text-align: left;
+    position: relative;
     margin-bottom: 2px;
 }
 
